@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+
+        versionCode 1
+        versionName "1.0"
+
+        applicationId "com.triarc.tutorial.android.retrofit_rxjava"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /*Kotlin dependency*/
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /*Android SDK dependencies*/
+    implementation "com.android.support:design:$sdk_version"
+    implementation "com.android.support:appcompat-v7:$sdk_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+
+    /*Retrofit REST dependencies*/
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    /*Http logging*/
+    implementation "com.squareup.okhttp3:logging-interceptor:$ok_http_version"
+
+    /*Picasso dependency*/
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+
+    /*RxJava*/
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_java_android_version"
+
+    /*Dagger dependencies*/
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    /*JUnit dependencies*/
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$expresso_version"
+}
+
+buildscript {
+    ext.sdk_version               = '28.0.0'
+    ext.gson_version              = '2.8.0'
+    ext.junit_version             = '4.12'
+    ext.dagger_version            = '2.15'
+    ext.ok_http_version           = '3.9.1'
+    ext.rx_java_version           = '2.1.12'
+    ext.picasso_version           = '2.5.2'
+    ext.retrofit_version          = '2.3.0'
+    ext.expresso_version          = '3.0.2'
+    ext.test_runner_version       = '1.0.2'
+    ext.rx_java_android_version   = '2.0.2'
+    ext.constraint_layout_version = '1.1.3'
+}
