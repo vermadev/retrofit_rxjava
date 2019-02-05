@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+            android:id="@+id/cover_image"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            android:background="@color/colorGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Game of thrones"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:alpha=".87"
+            app:layout_constraintTop_toTopOf="@id/cover_image"
+            app:layout_constraintStart_toEndOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2011"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:alpha=".54"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toEndOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Every Sunday"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:alpha=".80"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/year"
+            app:layout_constraintStart_toEndOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sci-Fi, Drama, Action, Adventure, Fantasy"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:alpha=".80"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitle"
+            app:layout_constraintStart_toEndOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/rating"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Average Rating 8.5"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:alpha=".80"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/genre"
+            app:layout_constraintStart_toEndOf="@id/cover_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/cover_image"/>
+</android.support.constraint.ConstraintLayout>
