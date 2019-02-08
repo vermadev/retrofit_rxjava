@@ -8,7 +8,7 @@ import javax.inject.Singleton
  * Created by Devanshu Verma on 5/2/19
  */
 @Singleton
-@Component(modules = [ShowListModule::class, RetrofitServiceModule::class])
+@Component(modules = [ContextModule::class, ShowListModule::class, RetrofitServiceModule::class])
 interface ApplicationComponent {
 
     fun inject(target: ShowListFragment)
