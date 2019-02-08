@@ -1,10 +1,7 @@
 package com.triarc.tutorial.android.retrofit_rxjava.application
 
 import android.app.Application
-import com.triarc.tutorial.android.retrofit_rxjava.dependency.ApplicationComponent
-import com.triarc.tutorial.android.retrofit_rxjava.dependency.DaggerApplicationComponent
-import com.triarc.tutorial.android.retrofit_rxjava.dependency.RetrofitServiceModule
-import com.triarc.tutorial.android.retrofit_rxjava.dependency.ShowListModule
+import com.triarc.tutorial.android.retrofit_rxjava.dependency.*
 import com.triarc.tutorial.android.retrofit_rxjava.intf.Logger
 import com.triarc.tutorial.android.retrofit_rxjava.logger.LoggerImpl
 
@@ -22,6 +19,7 @@ class RetroftRxJavaTutorialApplication: Application() {
 
         applicationComponent = DaggerApplicationComponent
             .builder()
+            .contextModule(ContextModule(this))
             .showListModule(ShowListModule())
             .retrofitServiceModule(RetrofitServiceModule())
             .build()
